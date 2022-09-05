@@ -1,1 +1,1 @@
-This location is holds learnings on standard streams and formatting on shell
+This location has learnings on standard streams and formatting on shell
