@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
-msg="Best school"
+msg="Best School"
 i="0"
 until [ $i -eq 10 ]
 do

@@ -7,7 +7,7 @@ do
     if [ $i -eq 9 ]; then
         msg="Hi"
     else
-        msg="Best school"
+        msg="Best School"
     fi
 
     echo "$msg"

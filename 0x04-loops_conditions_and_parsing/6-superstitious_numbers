@@ -3,15 +3,20 @@
 msg=""
 i=1
 while [ $i -le 20 ]; do
-    if [ $i -eq 4 ]; then
-        msg="$i\nbad luck from China"
-    elif [ $i -eq 9 ]; then
-        msg="$i\nbad luck from Japan"
-    elif [ $i -eq 17 ]; then
-        msg="$i\nbad luck from Italy"
-    else
-        msg="$i"
-    fi
+    case $i in
+        4)    
+            msg="$i\nbad luck from China"
+            ;;
+        9)
+            msg="$i\nbad luck from Japan"
+            ;;
+        17)
+            msg="$i\nbad luck from Italy"
+            ;;
+        *)
+            msg="$i"
+            ;;
+        esac
     echo -e "$msg"
     i=$((i+1))
 done
