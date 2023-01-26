@@ -2,5 +2,5 @@
 # Script that displays content of dir in list
 
 for i in "$PWD"/*; do
-    echo "${i//*-/}"
+    basename "$i" | cut -d "-" -f2
 done
