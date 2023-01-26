@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Prints statements in a loop
+i=1
+msg=""
+while [ $i -le 10 ]
+do
+    if [ $i -eq 4 ]; then
+        msg="bad luck"
+    elif [ $i -eq 8 ]; then
+        msg="good luck"
+    else
+        msg="Best School"
+    fi
+    echo "$msg"
+    i=$((i+1))
+done

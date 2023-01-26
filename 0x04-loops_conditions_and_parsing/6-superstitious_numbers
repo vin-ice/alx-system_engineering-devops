@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Script that displays number from 1 to 20
+msg=""
+i=1
+while [ $i -le 20 ]; do
+    if [ $i -eq 4 ]; then
+        msg="$i\nbad luck from China"
+    elif [ $i -eq 9 ]; then
+        msg="$i\nbad luck from Japan"
+    elif [ $i -eq 17 ]; then
+        msg="$i\nbad luck from Italy"
+    else
+        msg="$i"
+    fi
+    echo -e "$msg"
+    i=$((i+1))
+done

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script that displays content of dir in list
+for i in ./*; do
+    echo "${i//*-/}"
+done

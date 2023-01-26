@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Displays numbers from 1-100
+for i in $(seq 100); do
+    msg=""
+    if (( (i % 3) == 0 )) && (( (i % 5) != 0 )); then
+        msg="Fizz"
+    elif (( (i % 5) == 0 )) && (( (i % 3) != 0 )); then
+        msg="Buzz"
+    elif (( (i % 3) == 0 )) && (( (i % 5) == 0 )); then
+        msg="FizzBuzz"
+    else
+        msg="$i"
+    fi
+    echo "$msg"
+done
