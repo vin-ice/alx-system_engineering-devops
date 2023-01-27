@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# creates a file, displays text, traps signals
+
+f_path=/var/run/myscript.pid
+echo "$$" > $f_path
+while true; do
+    trap "echo I hate the kill command" SIGTERM
+    trap "echo Y U no love me?!" SIGINT
+    trap 'rm $f_path && exit' SIGQUIT
+    echo "To infinity and beyond"
+done

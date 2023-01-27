@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# manages daemons
+f_path=/tmp/my_process
+
+while true; do
+    echo 'I am alive!' >> $f_path
+    sleep 2
+done
