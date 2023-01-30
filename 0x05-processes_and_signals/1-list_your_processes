@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Lists all proccess
 
-ps -aux
+ps -auxf
