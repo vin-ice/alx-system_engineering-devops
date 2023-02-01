@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Displays all active IPV4 IP
+IFS=$'\n'
+ads=$(ifconfig | grep "inet ")
+
+if [[ -n "$ads" ]]; then
+    for i in $ads; do
+       echo "$i" | awk '{print $2}'
+    done
+fi
