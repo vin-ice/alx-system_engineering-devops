@@ -1,7 +1,7 @@
 # Networkin Basics
 ## Resources
 - [OSI model](https://intranet.alxswe.com/rltoken/k2uCsynicuNbu1cAQhXqVQ)
-- Different types of network](https://intranet.alxswe.com/rltoken/XW3ZGm5Ya_a8XVDXcAKT_A)
+- [Different types of network](https://intranet.alxswe.com/rltoken/XW3ZGm5Ya_a8XVDXcAKT_A)
 - [LAN network](https://intranet.alxswe.com/rltoken/en370-Hrwgi_GUvFcg3bKg)
 - [WAN network](https://intranet.alxswe.com/rltoken/Ah1EKqnINR85lM4P2WnLSw)
 - [Internet](https://intranet.alxswe.com/rltoken/Lwh9xQxFD4dWh5sIApXI1g)
@@ -15,8 +15,8 @@
 - [What is ping /ICMP](https://intranet.alxswe.com/rltoken/3zBgO6r2M1Q8lUVt9g8aJw)
 - [Positional parameters](https://intranet.alxswe.com/rltoken/ZbMHH3jmxFhcrbigVy15iw)
 
-- `netstat`
-- `ping`
+
+- `netstat` `ping`
 
 ## Requirements
 - Allowed editors: vi, vim, emacs
