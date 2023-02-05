@@ -2,7 +2,7 @@
 # pings an ip address passed as an arg
 
 if [[ $# -eq 0 ]]; then
-    echo "Usage: $0 {IP_ADDRESS}"
+    echo "Usage: $0 {IP_ADDRESS}" | sed 's/\.\///'
 else
     ping -c 5 "$1"
 fi
