@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Used to configure the local ssh client to connect to a server
+# without typing a password 
+
+Host 3.84.239.19
+    IdentityFile ~/.ssh/school
+    IdentitiesOnly yes
