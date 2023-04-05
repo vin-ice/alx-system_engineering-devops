@@ -2,5 +2,6 @@
 # Configures an ubuntu machine with nginx and a root file
 apt-get -y update
 apt-get -y install nginx
-echo "Hello world!" > /var/nginx/www/index.nginx-debian.html
+ufw allow 'Nginx HTTP'
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
 service nginx start
