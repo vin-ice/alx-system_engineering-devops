@@ -1,6 +1,7 @@
-# creates a custom response
-exec { 'response':
-  command => 'apt-get -y update'
-  sudo sed -i "/listen 80 default_server;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default;
-  service nginx restart',
+# creates a custom response header
+file_line { 'nginx custom response header'
+  ensure => 'present'
+  path   => '/etc/nginx/nginx.conf'
+  after  => 'http {'
+  line   => 'add_header X-Served-By $hostname;'
 }

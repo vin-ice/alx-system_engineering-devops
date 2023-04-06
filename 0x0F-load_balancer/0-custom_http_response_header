@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Configures an Ubuntu machine with Nginx
 apt-get -y update
-apt-get -y install Nginx
+apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
-sed -i "37i\ \n\tadd_header X-Served-By $hostname;\n"
+service nginx start
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+sed -i '/http {/a \\tadd_header X-Served-By $hostname;' /etc/nginx/nginx.conf
+service nginx restart
