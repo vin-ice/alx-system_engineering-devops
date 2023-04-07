@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# installs, configures, and starts the load balancer
+apt-get update
+apt-get -y install --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.6
+apt-get -y install haproxy=2.6.\*
+
+# configure proxy to send traffic to web-01 web-02
+# distribute requests using roundrobin
+conf=\
+"
+# vinice.tech back end
+backend vinice.tech-backend
+    mode http
+    balance roundrobin
+    server 134113-web-01 3.84.239.19:80 check
+    server 134113-web-02 18.210.33.168:80 check
+
+# vinice.tech front end
+frontend vinice.tech-frontend
+    bind *:80
+    mode http
+
+    default_backend vinice.tech-backend
+"
+
+echo "$conf" | sudo tee -a "/etc/haproxy/haproxy.cfg"
+# init script to manage HAproxy
+if [ ! -f "/etc/init.d/haproxy" ]; then
+    apt-get --reinstall install haproxy=2.6.\*
+fi
