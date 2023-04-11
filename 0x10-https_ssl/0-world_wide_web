@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Displays information about a subdomain
+
+declare -a subs[0]="www" subs[1]="lb-01" subs[2]="web-01" subs[3]="web-02"
+display_domain () {
+    local sub=$1
+    local domain=$2
+    dig "$sub.$domain" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk -v s="$sub" '{print "The subdomain " s " is a " $4 " record and points to " $5}'
+}
+
+if [ "$#" -lt 1 ]; then
+    exit
+else
+    domain="$1"
+    if [ "$#" -eq 1 ]; then
+        for (( i=0; i<=3; i++ )); do
+            display_domain "${subs[i]}" "$domain"
+        done
+    else
+        display_domain "$2" "$domain"
+    fi
+fi 
