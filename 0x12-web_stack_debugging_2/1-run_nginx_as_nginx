@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # sets nginx to run as user nginx & listen on 8080
 pkill -f apache2
-chown nginx:nginx /etc/nginx/nginx.conf
+echo -e "\n# Allow nginx to manage nginx process\nnginx ALL=(root) NOPASSWD: /usr/bin/service nginx start, /usr/bin/service nginx stop" | sudo tee -a /etc/sudoers
+chown -R nginx:nginx /etc/nginx/
 chmod 700 /etc/nginx/nginx.conf
 sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 su nginx -c 'service nginx start'
