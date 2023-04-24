@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""REST api consumer/client"""
+"""REST api consumer/client that write to csv file"""
 import requests
 from sys import argv
 

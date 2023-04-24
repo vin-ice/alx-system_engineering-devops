@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""REST api consumer/client"""
+"""REST api consumer/client that writes to json file"""
 from json import dumps
 import requests
 from sys import argv
@@ -16,8 +16,9 @@ if __name__ == "__main__":
             todos = requests.get(url="".join([URL, "users/", id,
                                  "/todos"])).json()
 
-            with open(f"{id}.json", "a", encoding="utf8") as f:
-                f.write(dumps({id: [{"task": t.get("title"),
-                                     "completed": t.get("completed"),
-                                     "username": username} for t in todos]},
-                              indent=4))
+            dump = {id: [{"task": t.get("title"),
+                          "completed": t.get("completed"),
+                          "username": username} for t in todos]}
+
+            with open(f"{id}.json", "w", encoding="utf8") as f:
+                f.write(dumps(dump))

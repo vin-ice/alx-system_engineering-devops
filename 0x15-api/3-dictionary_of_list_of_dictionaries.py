@@ -19,5 +19,5 @@ if __name__ == "__main__":
                           "completed": t.get("completed")}
                          for t in todos[i]] for i in range(len(ids))}
 
-        with open("todo_all_employees.json", "a", encoding="utf8") as f:
-            f.write(dumps(dump, indent=4))
+        with open("todo_all_employees.json", "w", encoding="utf8") as f:
+            f.write(dumps(dump))
