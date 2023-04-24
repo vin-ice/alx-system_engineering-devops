@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""REST api consumer/client"""
+"""REST api consumer/client that prints  an employee's completed tasks"""
 import requests
 from sys import argv
 

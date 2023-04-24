@@ -20,5 +20,5 @@ if __name__ == "__main__":
                           "completed": t.get("completed"),
                           "username": username} for t in todos]}
 
-            with open(f"{id}.json", "w", encoding="utf8") as f:
+            with open("{}.json".format(id), "w", encoding="utf8") as f:
                 f.write(dumps(dump))
