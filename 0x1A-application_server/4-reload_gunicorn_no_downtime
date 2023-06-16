@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-PID=$(grep gunicorn)
+PID=$(pgrep gunicorn)
 if [[ -n $PID ]]; then
   kill -HUP "$PID"
 fi
